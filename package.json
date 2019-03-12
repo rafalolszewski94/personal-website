@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "gh-pages": "^2.0.1"
+  },
+  "scripts": {
+    "build": "bundle exec jekyll build",
+    "deploy": "gh-pages -d _site"
+  }
+}

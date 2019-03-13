@@ -1,6 +1,6 @@
 import pkg from './package';
 
-export default {
+const config = {
   mode: 'universal',
 
   /*
@@ -66,3 +66,5 @@ export default {
     }
   }
 }
+
+export default config;

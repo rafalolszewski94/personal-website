@@ -1,4 +1,4 @@
-import pkg from './package';
+import pkg from './package'
 
 const config = {
   mode: 'universal',
@@ -37,7 +37,10 @@ const config = {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-136106925-1'
+    }]
   ],
   /*
   ** Axios module configuration
@@ -67,4 +70,4 @@ const config = {
   }
 }
 
-export default config;
+export default config

@@ -1,17 +1,23 @@
 <template>
-  <div class="home">
-    <span class="big-emoji">⏰ 🚀</span>
+  <div>
+    <span :class="$style.bigEmoji">⏰ 🚀</span>
     <h1>orafal.dev - work in progress...</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: "home"
-};
+  name: 'home',
+  props: {
+    user: {
+      type: Object,
+      required: true,
+    },
+  },
+}
 </script>
 
-<style lang="scss">
+<style lang="scss" module>
 .big-emoji {
   font-size: 48px;
 }

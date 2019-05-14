@@ -6,7 +6,7 @@ module.exports = {
   plugins: [
     require('postcss-cssnext'),
     atImport(),
-    tailwindcss('./tailwind.js'),
+    // tailwindcss('./tailwind.js'),
 
     //Only add purgecss in production
     process.env.NODE_ENV === 'production' ? purgecss({

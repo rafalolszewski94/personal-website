@@ -1,21 +1,21 @@
 <template>
-  <div :id="$style.app" :class="$style.wrapper">
-    <div :class="$style.sidebar">
+  <div id="app" class="wrapper">
+    <div class="sidebar">
       <template v-if="user">
-        <div :class="$style.avatarContainer">
-          <img
-            :src="user.avatar_url"
-            :alt="user.name"
-            :class="$style.avatar"
-          >
-        </div>
+        <img
+          :src="user.avatar_url"
+          :alt="user.name"
+          class="avatar"
+          width="72"
+          height="72"
+        >
         <h2>
           <a :href="user.html_url">{{user.login}}</a>
         </h2>
       </template>
     </div>
     <!--<router-view class="content"/>-->
-    <home :class="$style.content" :user="user"/>
+    <home class="content" :user="user"/>
   </div>
 </template>
 
@@ -29,7 +29,11 @@ export default {
   },
   data() {
     return {
-      user: null,
+      user: {
+        avatar_url: '',
+        html_url: '',
+        login: '',
+      },
     }
   },
   created() {
@@ -40,11 +44,10 @@ export default {
 }
 </script>
 
-<style lang="scss" module>
+<style lang="scss">
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  @apply bg-grey-lightest m-0 font-sans;
 }
 
 #app {
@@ -62,23 +65,14 @@ body {
 
 .sidebar {
   grid-area: sidebar;
-  @apply bg-white border-r;
 
   h2 {
-    @apply m-0 mt-4 text-center w-full;
+
   }
 }
 
 .content {
   grid-area: content;
-  @apply flex items-center justify-center flex-col;
-}
-
-.avatar-container {
-  @apply mx-4 mt-4 text-center;
-}
-
-.avatar {
-  composes: avatar from "./assets/app.scss";
+  /*@apply flex items-center justify-center flex-col;*/
 }
 </style>

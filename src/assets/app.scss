@@ -1,11 +1,4 @@
-a {
-  @apply text-green no-underline;
-
-  &:hover {
-    @apply text-green-dark;
-  }
-}
-
-.avatar {
-  @apply rounded border w-24 h-24;
+img {
+  height: auto;
+  max-width: 100%;
 }
